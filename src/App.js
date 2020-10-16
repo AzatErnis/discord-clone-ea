@@ -10,6 +10,7 @@ import { auth } from './firebase';
 
 
 function App() {
+
   const dispatch = useDispatch()
   const user = useSelector(selectUser)
 
@@ -17,19 +18,19 @@ function App() {
     auth.onAuthStateChanged(authUser => {
       console.log('user is ', authUser);
       if (authUser) {
-        dispatch(
-          login({
-            uid: authUser.uid,
-            photo: authUser.photoURL,
-            email: authUser.email,
-            displayName: authUser.displayName,
-          })
+        dispatch(login({
+          uid: authUser.uid,
+          photo: authUser.photoURL,
+          email: authUser.email,
+          displayName: authUser.displayName,
+        })
         )
       } else {
         dispatch(logout)
       }
     })
-  }, [])
+  }, [dispatch])
+
   return (
     <div className="app">
       {

@@ -2,13 +2,13 @@ import React from 'react'
 import './ChatHeader.css'
 import { EditLocationRounded, HelpRounded, Notifications, PeopleAltRounded, SearchRounded, SendRounded } from '@material-ui/icons'
 
-const ChatHeader = () => {
+const ChatHeader = ({ channelName }) => {
   return (
     <div className="chat-header">
       <div className="chat-header--left">
         <h3>
           <span className="chat-header__hash">#</span>
-          Test Chanel Name
+          {channelName}
         </h3>
       </div>
       <div className="chat-header--right">

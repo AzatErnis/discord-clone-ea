@@ -84,5 +84,6 @@
 }
 
 .sidebar__profile-icons .MuiSvgIcon-root {
+  color: gray;
   padding: 10px;
 }
